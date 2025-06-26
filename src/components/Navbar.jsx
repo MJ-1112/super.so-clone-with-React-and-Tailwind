@@ -13,7 +13,7 @@ function Navbar() {
           <img
             src="Logo.svg"
             alt="Logo"
-            className="h-8 sm:h-10 w-auto max-w-[160px] cursor-pointer"
+            className="h-8 sm:h-7 w-auto max-w-[160px] cursor-pointer"
           />
         </Link>
 

@@ -7,6 +7,7 @@ import Features from './components/Features'
 import Pricing from './components/Pricing'
 import Guides from './components/Guides'
 import Blog from './components/Blog'
+import Footer from './components/Footer'
 
 function App() {
   
@@ -22,6 +23,7 @@ function App() {
       <Route path='/guides' element={<Guides/>}></Route>
       <Route path='/blogs' element={<Blog/>}></Route>
     </Routes>
+    <Footer/>
    </div>
   )
 }
