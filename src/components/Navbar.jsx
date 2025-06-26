@@ -1,26 +1,73 @@
-import React from 'react'
-import { Link } from 'react-router-dom'
+import React, { useState } from "react";
+import { Link } from "react-router-dom";
+import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
 
 function Navbar() {
+  const [menuOpen, setMenuOpen] = useState(false);
+
   return (
-    <div>
-        <nav className='h-20 shadow flex items-center  pl-6 gap-30' >
-            <div className='flex gap-90 items-center'>
-               <Link to="/"> <img src="Logo.svg" alt="Logo"  className='h-6 cursor-pointer'/></Link>
-            <ul className='flex items-center gap-5 font-inter cursor-pointer'>
-               <Link to='/templates'><li className='text-gray-600  text-lg'>Templates</li></Link>
-                <Link to="/showcase"><li className='text-gray-600  text-lg'>Showcase</li></Link>
-                <Link to="/features"><li className='text-gray-600  text-lg'>Features</li></Link>
-                <Link to="/pricing"><li className='text-gray-600  text-lg'>Pricing</li></Link>
-                <Link to="/guides"><li className='text-gray-600  text-lg'>Guides</li></Link>
-                <Link to="/blogs"><li className='text-gray-600  text-lg'>Blog</li></Link>
-                <button className='rounded-xl shadow p-2 font-medium pl-2 cursor-pointer transition delay-50 duration-300 ease-in-out hover:bg-gray-100'>Sign in</button>
-                <button className='bg-yellow-500 w-40 p-2 rounded-xl font-medium transition delay-50 duration-300 ease-in-out hover:opacity-25 cursor-pointer'>Get started free</button>
-            </ul>
-            </div>
-        </nav>
+    <div className="w-full shadow-md">
+      <nav className="h-20 px-6 flex items-center justify-between">
+        
+        <Link to="/">
+          <img
+            src="Logo.svg"
+            alt="Logo"
+            className="h-8 sm:h-10 w-auto max-w-[160px] cursor-pointer"
+          />
+        </Link>
+
+       
+        <ul className="hidden md:flex items-center gap-6 font-inter">
+          <li><Link to="/templates" className="text-gray-600 text-lg">Templates</Link></li>
+          <li><Link to="/showcase" className="text-gray-600 text-lg">Showcase</Link></li>
+          <li><Link to="/features" className="text-gray-600 text-lg">Features</Link></li>
+          <li><Link to="/pricing" className="text-gray-600 text-lg">Pricing</Link></li>
+          <li><Link to="/guides" className="text-gray-600 text-lg">Guides</Link></li>
+          <li><Link to="/blogs" className="text-gray-600 text-lg">Blog</Link></li>
+          <li>
+            <button className="rounded-xl shadow px-4 py-2 font-medium hover:bg-gray-100">
+              Sign in
+            </button>
+          </li>
+          <li>
+            <button className="bg-yellow-500 px-6 py-2 rounded-xl font-medium hover:opacity-80">
+              Get started free
+            </button>
+          </li>
+        </ul>
+
+       
+        <div className="md:hidden">
+          <button onClick={() => setMenuOpen(!menuOpen)}>
+            {menuOpen ? (
+              <XMarkIcon className="h-6 w-6" />
+            ) : (
+              <Bars3Icon className="h-6 w-6" />
+            )}
+          </button>
+        </div>
+      </nav>
+
+      
+      {menuOpen && (
+        <div className="md:hidden px-6 py-4 space-y-4 bg-white shadow">
+          <Link to="/templates" className="block text-gray-700">Templates</Link>
+          <Link to="/showcase" className="block text-gray-700">Showcase</Link>
+          <Link to="/features" className="block text-gray-700">Features</Link>
+          <Link to="/pricing" className="block text-gray-700">Pricing</Link>
+          <Link to="/guides" className="block text-gray-700">Guides</Link>
+          <Link to="/blogs" className="block text-gray-700">Blog</Link>
+          <button className="block w-full text-left rounded-xl shadow px-4 py-2 font-medium hover:bg-gray-100">
+            Sign in
+          </button>
+          <button className="block w-full bg-yellow-500 py-3 rounded-xl font-medium hover:opacity-80">
+            Get started free
+          </button>
+        </div>
+      )}
     </div>
-  )
+  );
 }
 
-export default Navbar
+export default Navbar;
