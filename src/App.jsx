@@ -1,5 +1,12 @@
 import { useState } from 'react'
 import Navbar from './components/Navbar'
+import Templates from './components/Templates'
+import { Routes,Route } from 'react-router-dom'
+import Showcase from './components/Showcase'
+import Features from './components/Features'
+import Pricing from './components/Pricing'
+import Guides from './components/Guides'
+import Blog from './components/Blog'
 
 function App() {
   
@@ -7,6 +14,14 @@ function App() {
   return (
    <div>
     <Navbar/>
+    <Routes>
+      <Route path='/templates' element={<Templates/>}></Route>
+      <Route path='/showcase' element={<Showcase/>}></Route>
+      <Route path='/features' element={<Features/>}></Route>
+      <Route path='/pricing' element={<Pricing/>}></Route>
+      <Route path='/guides' element={<Guides/>}></Route>
+      <Route path='/blogs' element={<Blog/>}></Route>
+    </Routes>
    </div>
   )
 }
