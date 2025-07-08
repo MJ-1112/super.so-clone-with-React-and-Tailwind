@@ -4,9 +4,22 @@ import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
 
 function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
+  const [navbarOpaque, setNavbarOpaque] = useState(true);
+
+  React.useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 10) {
+      setNavbarOpaque(false);
+      } else {
+      setNavbarOpaque(true);
+      }
+    };
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   return (
-    <div className="w-full shadow-md">
+    <div className={`w-full fixed top-0 left-0 z-50 bg-white shadow-md ${navbarOpaque ? "opacity-100" : "opacity-25"}`}>
       <nav className="h-20 px-6 flex items-center justify-between">
         
         <Link to="/">
@@ -20,11 +33,8 @@ function Navbar() {
        
         <ul className="hidden md:flex items-center gap-6 font-inter">
           <li><Link to="/templates" className="text-gray-600 text-lg">Templates</Link></li>
-          <li><Link to="/showcase" className="text-gray-600 text-lg">Showcase</Link></li>
           <li><Link to="/features" className="text-gray-600 text-lg">Features</Link></li>
           <li><Link to="/pricing" className="text-gray-600 text-lg">Pricing</Link></li>
-          <li><Link to="/guides" className="text-gray-600 text-lg">Guides</Link></li>
-          <li><Link to="/blogs" className="text-gray-600 text-lg">Blog</Link></li>
           <li>
             <button className="rounded-xl shadow px-4 py-2 font-medium hover:bg-gray-100">
               Sign in
