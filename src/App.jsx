@@ -8,6 +8,9 @@ import Pricing from './components/Pricing'
 import Guides from './components/Guides'
 import Blog from './components/Blog'
 import Footer from './components/Footer'
+import Homepage from './components/Homepage'
+// import NotionClone from './Test'
+
 
 function App() {
   
@@ -15,7 +18,9 @@ function App() {
   return (
    <div>
     <Navbar/>
+    {/* <NotionClone/> */}
     <Routes>
+      <Route path='/' element={<Homepage/>}></Route>
       <Route path='/templates' element={<Templates/>}></Route>
       <Route path='/showcase' element={<Showcase/>}></Route>
       <Route path='/features' element={<Features/>}></Route>
@@ -23,7 +28,7 @@ function App() {
       <Route path='/guides' element={<Guides/>}></Route>
       <Route path='/blogs' element={<Blog/>}></Route>
     </Routes>
-    <Footer/>
+    {/* <Footer/> */}
    </div>
   )
 }

@@ -4,9 +4,22 @@ import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
 
 function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
+  const [navbarOpaque, setNavbarOpaque] = useState(true);
+
+  React.useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 10) {
+      setNavbarOpaque(false);
+      } else {
+      setNavbarOpaque(true);
+      }
+    };
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   return (
-    <div className="w-full shadow-md">
+    <div className={`w-full fixed top-0 left-0 z-50 bg-white shadow-md ${navbarOpaque ? "opacity-100" : "opacity-25"}`}>
       <nav className="h-20 px-6 flex items-center justify-between">
         
         <Link to="/">

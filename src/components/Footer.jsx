@@ -8,7 +8,7 @@ import {
 
 function Footer() {
   return (
-    <footer className="bg-black w-full py-10 px-6 text-white absolute bottom-0">
+    <footer className="bg-black w-full py-10 px-6 text-white ">
       <div className="max-w-7xl mx-auto flex flex-col gap-6 items-start">
         <img src="footerlogo.svg" alt="Footer Logo" className="h-8" />
 
@@ -35,13 +35,13 @@ function Footer() {
         </ul>
 
         <div className="flex justify-center gap-6 text-xl mt-4">
-          <a href="https://discord.com/" target="_blank" rel="noopener noreferrer">
+          <a href="https://discord.com/" >
             <FaDiscord className="hover:text-blue-400 cursor-pointer h-6 w-6" />
           </a>
-          <a href="https://x.com/" target="_blank" rel="noopener noreferrer">
+          <a href="https://x.com/" >
             <FaXTwitter className="hover:text-gray-300 cursor-pointer h-6 w-6" />
           </a>
-          <a href="https://instagram.com/" target="_blank" rel="noopener noreferrer">
+          <a href="https://instagram.com/" >
             <FaInstagram className="hover:text-pink-400 cursor-pointer h-6 w-6" />
           </a>
           <a href="https://youtube.com/" target="_blank" rel="noopener noreferrer">
