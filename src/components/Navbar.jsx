@@ -33,11 +33,8 @@ function Navbar() {
        
         <ul className="hidden md:flex items-center gap-6 font-inter">
           <li><Link to="/templates" className="text-gray-600 text-lg">Templates</Link></li>
-          <li><Link to="/showcase" className="text-gray-600 text-lg">Showcase</Link></li>
           <li><Link to="/features" className="text-gray-600 text-lg">Features</Link></li>
           <li><Link to="/pricing" className="text-gray-600 text-lg">Pricing</Link></li>
-          <li><Link to="/guides" className="text-gray-600 text-lg">Guides</Link></li>
-          <li><Link to="/blogs" className="text-gray-600 text-lg">Blog</Link></li>
           <li>
             <button className="rounded-xl shadow px-4 py-2 font-medium hover:bg-gray-100">
               Sign in
